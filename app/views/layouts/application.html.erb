@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Picnik</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if flash[:success].present? %>
+      <div class="success">
+        <%= flash[:success] %>
+      </div>
+    <% end %>
+
+    <header>
+      <h1>picnik</h1>
+    </header>
+
+    <nav>
+      <% if is_logged_in? %>
+        Current iser is <%= @current_user.username %>
+      <% else %>
+        <%= link_to "Sign up", new_user_path %>
+        <%= link_to "Log in", new_session_path %>
+      <% end %>
+    </nav>
+
+    <%= yield %>
+  </body>
+</html>
