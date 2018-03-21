@@ -36,7 +36,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Add in simpleform
 gem 'simple_form'
 
-
+# Add Active Admin
+gem 'activeadmin'
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
