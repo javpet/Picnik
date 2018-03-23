@@ -19,4 +19,11 @@ class ApplicationController < ActionController::Base
     session[:user_id].present?
   end
 
+  def force_login
+    unless is_logged_in?
+      flash[:error] = "You are not logged in"
+      redirect_to new_user_path
+    end
+  end
+
 end
