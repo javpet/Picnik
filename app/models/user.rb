@@ -6,4 +6,9 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  def gravatar_image
+    encrypted_email = Digest::MD5.hexdigest(self.email.downcase)
+    "https://www.gravatar.com/avatar/#{encrypted_email}.jpg?s=48"
+  end
+
 end

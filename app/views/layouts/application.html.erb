@@ -30,6 +30,9 @@
 
       <nav>
         <% if is_logged_in? %>
+          <% if @current_user.gravatar_image.present? %>
+            <%= image_tag @current_user.gravatar_image, class: "avatar" %>
+          <% end %>
           <strong><%= @current_user.username %></strong>
           <%= link_to "Log out", session_path, method: :delete %>
         <% else %>

@@ -68,9 +68,16 @@ nav {
 	position: fixed;
 	top: 0.5rem;
 	right: 1rem;
+	display: flex;
+	align-items: center;
 
 	a {
 		margin-left: 1rem;
+	}
+
+	.avatar {
+		border-radius: 50%;
+		margin-right: 0.5rem;
 	}
 }
 
