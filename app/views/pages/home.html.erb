@@ -1,4 +1,7 @@
-<p>
-  <%= link_to "Sign up", new_user_path, class: "button" %>
-  <%= link_to "Log in", new_session_path, class: "button-outline" %>
-</p>
+<h3>Latest pictures</h3>
+
+<div class="photo-grid">
+  <% @latest_photos.each do |photo| %>
+    <%= image_tag photo.image.medium %>
+  <% end %>
+</div>
