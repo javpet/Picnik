@@ -45,6 +45,12 @@ a {
 	}
 }
 
+.success,
+.error {
+	padding-top: 0.5rem;
+	padding-left: 1rem;
+}
+
 // Header
 header {
 	width: 100%;
@@ -155,4 +161,16 @@ input[type="submit"] {
 	&:hover {
 		opacity: 0.75;
 	}
+}
+
+// -------------------------------- PHOTO PAGE ------------------------------
+.show-page {
+	text-align: center;
+}
+
+.main-photo {
+	margin: 0 auto;
+	margin-top: 1rem;
+	display: block;
+	margin-bottom: 6rem;
 }

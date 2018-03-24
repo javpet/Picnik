@@ -2,6 +2,8 @@
 
 <div class="photo-grid">
   <% @latest_photos.each do |photo| %>
-    <%= image_tag photo.image.medium %>
+    <%= link_to item_path(photo)  do %>
+      <%= image_tag photo.image.medium %>
+    <% end %>
   <% end %>
 </div>
