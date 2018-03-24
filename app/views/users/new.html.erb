@@ -1,6 +1,6 @@
-<h1>Sign up</h1>
+<h3>Sign up</h3>
 
-<%= simple_form_for @user do |f| %>
+<%= simple_form_for @user, html: { autocomplete: 'off' } do |f| %>
   <%= f.input :name %>
   <%= f.input :username %>
   <%= f.input :email %>
