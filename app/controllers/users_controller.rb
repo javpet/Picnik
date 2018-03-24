@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
       redirect_to root_path
     else
+      flash[:error] = "Oooops there was an error with your sign up, please try again!"
       render "new"
     end
   end
