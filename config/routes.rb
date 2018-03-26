@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   # The people can see multiple items
   resources :items
 
+  # There are multiple categories
+  resources :categories
+
   get "about", to: "pages#about"
 
   root "pages#home"
