@@ -131,6 +131,11 @@ h3 {
 	}
 }
 
+.title-subnav {
+	display: flex;
+	justify-content: space-between;
+}
+
 // -------------------------------- SIGN UP ------------------------------
 form {
 	margin: 0 auto;
@@ -181,7 +186,20 @@ input[type="submit"] {
 
 // -------------------------------- PHOTO PAGE ------------------------------
 .show-page {
+	display: flex;
+	flex-direction: column;
 	text-align: center;
+	justify-content: center;
+	align-items: center;
+
+	.label {
+		padding: 10px 5px;
+		border: 1px solid #fff;
+		border-radius: 5px;
+		width: 100px;
+		font-size: 0.707rem;
+		margin-bottom: 2rem;
+	}
 }
 
 .main-photo {
@@ -197,4 +215,19 @@ input[type="submit"] {
 		font-size: 1rem;
 		line-height: 1.3;
 	}
+}
+
+.category-page {
+	text-align: center;
+
+	h2 {
+		font-size: 1.999rem;
+		font-family: "Cantata One", serif;
+		text-shadow: 1px 1px rgba(0, 0, 0, 0.13);
+		margin-bottom: 1rem;
+	}
+}
+
+.backlink {
+	margin-bottom: 2rem;
 }

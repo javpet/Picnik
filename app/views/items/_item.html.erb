@@ -1,6 +1,6 @@
 <div class="item">
   <%= link_to item_path(item) do %>
     <h2><%= item.title %></h2>
-    <%= image_tag item.image.medium %>
+    <%= image_tag item.image.medium, class: "main-photo" %>
   <% end %>
 </div>

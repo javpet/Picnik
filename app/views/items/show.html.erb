@@ -1,8 +1,10 @@
 <div class="show-page">
   <h3><%= @item.title %></h3>
+  <% @item.categories.each do |category|  %>
+      <p class="label"><%= link_to category.title, category_path(category) %></p>
+  <% end %>
   <span class="download-action">
     <%= link_to "Download", @item.image.url, download: true %>
   </span>
-
   <%= image_tag @item.image.medium, class: "main-photo" %>
 </div>
