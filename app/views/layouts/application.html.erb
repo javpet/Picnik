@@ -28,6 +28,10 @@
         <h2>snack from our best landscape photos</h2>
       </header>
 
+      <form class="search-form" action="/items">
+        <input type="text" name="q" value="<%= params[:q] %>" placeholder="search for photos..."/>
+      </form>
+
       <nav>
         <% if is_logged_in? %>
           <% if @current_user.gravatar_image.present? %>
