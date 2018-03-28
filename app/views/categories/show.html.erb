@@ -1,0 +1,9 @@
+<div class="category-page">
+  <h3>-<%= @category.title %>-</h3>
+
+  <p class="backlink">
+    <%= link_to "Back to all categories", categories_path %>
+  </p>
+
+  <%= render partial: "items/item", collection: @category.items.all %>
+</div>

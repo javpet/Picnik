@@ -1,4 +1,7 @@
-<h3>Latest pictures</h3>
+<div class="title-subnav">
+  <h3>Latest pictures</h3>
+  <h3><%= link_to "Categories→", categories_path %></h3>
+</div>
 
 <div class="photo-grid">
   <% @latest_photos.each do |photo| %>
