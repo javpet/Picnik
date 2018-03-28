@@ -136,6 +136,19 @@ h3 {
 	justify-content: space-between;
 }
 
+.search-form {
+	width: 75%;
+	display: flex;
+	align-items: center;
+	input {
+		margin: 0 auto;
+
+		&::placeholder {
+			color: rgba(255, 255, 255, 0.5);
+		}
+	}
+}
+
 // -------------------------------- SIGN UP ------------------------------
 form {
 	margin: 0 auto;
@@ -230,4 +243,9 @@ input[type="submit"] {
 
 .backlink {
 	margin-bottom: 2rem;
+}
+
+// -------------------------------- SEARCH PAGE ------------------------------
+.search-results {
+	text-align: center;
 }
