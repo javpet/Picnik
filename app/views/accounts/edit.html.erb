@@ -1,0 +1,11 @@
+<h3>Edit account</h3>
+
+<%= simple_form_for @user, url: account_path do |f| %>
+
+    <%= f.input :subscription_plan, as: :select, collection: [["Basic subscription - $9.99/month", "basic"],["Pro - subscription $99.99 / month", "pro"]], include_blank: false %>
+
+    <%= f.button :submit, "Update account" %>
+
+<% end %>
+
+<%= link_to "Delete account", account_path, method: :delete, data: {confirm: "Are you sure you want to delete your account?"}%>

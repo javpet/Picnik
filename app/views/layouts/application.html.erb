@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://js.stripe.com/v3/"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -37,7 +38,7 @@
           <% if @current_user.gravatar_image.present? %>
             <%= image_tag @current_user.gravatar_image, class: "avatar" %>
           <% end %>
-          <strong><%= @current_user.username %></strong>
+          <strong><%= link_to @current_user.username, edit_account_path, class: "no-margin" %></strong>
           <%= link_to "Log out", session_path, method: :delete %>
         <% else %>
           <%= link_to "Sign up", new_user_path %>

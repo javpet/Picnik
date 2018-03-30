@@ -87,6 +87,10 @@ nav {
 	}
 }
 
+.no-margin {
+	margin: 0;
+}
+
 // Footer
 footer {
 	position: fixed;
@@ -185,8 +189,9 @@ input:-webkit-autofill {
 }
 
 input[type="submit"] {
+	margin-top: 2rem;
 	text-align: left;
-	width: 150px;
+	width: 180px;
 	border: none;
 	text-decoration: underline;
 	padding: 0;
@@ -220,6 +225,16 @@ input[type="submit"] {
 	margin-top: 1rem;
 	display: block;
 	margin-bottom: 6rem;
+}
+
+// stripe
+
+#card form {
+	color: #fff;
+
+	input {
+		color: #fff;
+	}
 }
 
 // -------------------------------- CATEGORY PAGE ------------------------------

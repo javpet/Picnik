@@ -6,5 +6,50 @@
   <%= f.input :email %>
   <%= f.input :password %>
   <%= f.input :password_confirmation %>
+  <%# The first element is the title, and the second is what it sends to the database  %>
+  <%= f.input :subscription_plan, as: :select, collection: [["Basic subscription - $9.99/month", "basic"],["Pro - subscription $99.99 / month", "pro"]], include_blank: false %>
+
+  <div id="card-errors">
+    <% @user.errors[:stripe_token].each do |e| %>
+      <%= e %>
+    <% end %>
+  </div>
+
+  <div id="card"></div>
+
   <%= f.button :submit %>
 <% end %>
+
+<script>
+  var stripe = Stripe("pk_test_C2p4yWGLKjmOfmFlEpFAqqWI");
+  var elements = stripe.elements();
+
+
+  var style = {
+    color: "#FFF",
+    iconColor: "#FFF",
+    fontSize: "1.414rem",
+    base: {
+        "::placeholder": { color: "#FFF"}
+    }
+  };
+
+
+  var card = elements.create('card', {style:style});
+
+  // Add an instance of the card Element into the `card-element` <div>.
+  card.mount('#card');
+
+  $("form#new_user").on("submit", function(event) {
+    event.preventDefault();
+
+    stripe.createToken(card).then(function(result) {
+      if(result.error) {
+        $("card-errors").html(result.error.message)
+      } else {
+        $("form#new_user").append("<input type='hidden' name='user[stripe_token]' value='" + result.token.id + "'>");
+        $("form#new_user").get(0).submit()
+      }
+    })
+  })
+</script>
