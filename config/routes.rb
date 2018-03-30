@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # User can sign up multiple times
   resources :users
 
+  # Users can only edit one accounts
+  resource :account
+
   # User can only make one session
   resource :session
 
